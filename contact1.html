@@ -1,0 +1,82 @@
+<html>
+     <head>
+         <title>WONDER NATURE | CONTACT</title>
+		 <link rel="stylesheet" type="text/css" href="css/style5.css">
+     </head>
+     <body>
+	     <header>
+		 <div class="main">
+		     <div class="logo">
+			     <img src="12345.jpg" border="2">
+			 </div>	 
+		     <ul>
+			     <li><a href="index.html"><b>HOME</b></a></li>
+				 <li><a href="int.html"><b>INTRESTING PLACES</b></a></li>
+				 <li><a href="pro.html"><b> MY PROJECTS</b></a></li>
+				 <li><a href="games.html"><b>GAMES</b></a></li>
+				 <li class="active"><a href="contact1.html"><b>CONTACT US</b></a></li>	
+			 </ul>			 
+         </div>
+		 </header>
+	     <div class="title">
+		     <h3>WONDER NATURE</h3>
+			 <h4>CONTACT US</h4>
+			 <h5>E-MAIL: venukathaviru2005@gmail.com</br>TEL: 0774228725&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+	     </div>
+		 
+		 <div class="wrapper">
+		     <img src="1543.gif" width="200" height="200">
+		 </div>
+		 <div class="image">
+		     <img src="66.jpg" width="600" height="400">
+		 </div>
+		 
+	     <div class="contact-title"> 
+             <h1>CONTACT US</h1>
+             <h2>LEAVE A MESSAGE ABOUT OUR WEBPAGE</br>IT WILL BE A GREAT HELP FOR US TO MAKE THIS WEBSITE MORE GOOD!!</br>THANKS FOR BEING WITH US ALL THE TIME!!</h2>			 
+         </div>
+<?php
+     $name = $_POST['name'];
+	 $visitor_email = $_POST['email'];
+	 $message = $_POST['message'];
+	 
+	 
+	 $email_from = 'EasyTutorial@avinashkar.com';
+	 
+	 $email_subject = "New Form Submission from WONDER NATURE.com";
+	 
+	 $email_body = "User Name: $name.\n".
+	                  "User Email: $visitor_email.\n".
+					      "User Message: $message.\n";
+
+
+     $to = "venukathaviru2005@gmail.com";
+
+     $headers = "From: $email_from \r\n";
+
+     $headers = "Reply-To: $visitor_email \r\n";
+
+     mail($to,$email_subject,$email_body,$headers);
+
+     header("Location: contact1.php?mailsend");	 
+
+
+?>		 
+		 <div class="contact-form">
+		 
+		     <form id="contact-form" method="post" action="contact-form-handler.php">
+			     <input name="name" type="text" class="form-control" placeholder="Your Name" required></br>
+				 
+				 <input name="email" type="email" class="form-control" placeholder="Your Email" required></br>
+				  
+				 <textarea name="message" class="form-control" placeholder="Message" rows="4" required></textarea></br>
+				   
+				 <input type="submit" class="form-control submit" value="SEND MESSAGE">
+				    
+	         </form>
+			 
+	     </div>		 
+	 </body>
+</html>
